@@ -1,4 +1,3 @@
-<!-- templates/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +16,13 @@
             <input type="text" id="symbol" name="symbol" required>
             <button type="submit">Get Stock Data</button>
         </form>
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+        {% if stock_data %}
+        <h2>Stock Data for {{ symbol }}</h2>
+        <pre>{{ stock_data }}</pre>
+        {% endif %}
     </main>
     <footer>
         <p>&copy; 2024 Philip Kalinowski. All Rights Reserved.</p>

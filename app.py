@@ -12,6 +12,7 @@ logging.basicConfig(level=logging.INFO)
 
 @app.route('/')
 def index():
+    logging.info('Rendering index page')
     return render_template('index.html')
 
 @app.route('/get-stock', methods=['POST'])
@@ -20,8 +21,10 @@ def get_stock():
         symbol = request.form['symbol'].upper()
         stock_data = get_stock_data(symbol)
         if 'error' in stock_data:
+            logging.error(f"Error fetching stock data for {symbol}: {stock_data['error']}")
             return render_template('index.html', error=stock_data['error'])
-        return render_template('index.html', stock_data=stock_data)
+        logging.info(f"Successfully fetched stock data for {symbol}")
+        return render_template('index.html', stock_data=stock_data, symbol=symbol)
     except Exception as e:
         logging.error(f"Error processing request: {e}")
         return render_template('index.html', error='Internal server error')
