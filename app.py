@@ -26,15 +26,18 @@ def get_stock_data(symbol, interval='1min', outputsize='compact'):
     else:
         return {'error': 'Error fetching data'}
     
-@app.route('/', methods=['POST'])
+@app.route('/', methods=['GET', 'POST'])
 def index():
-    data = request.get_json()
-    symbol = data['symbol'].upper()
-    stock_data = get_stock_data(symbol)
-    return """
+    if request.method == 'POST':
+        data = request.get_json()
+        symbol = data['symbol'].upper()
+        stock_data = get_stock_data(symbol)
+    else:
+        return """
         <h1>Stock Price Tracker API</h1>
         <p>Use a POST request to this endpoint with a JSON payload containing a stock symbol to get stock data.</p>
         """
+
 
 if __name__ == '__main__':
     app.run(debug=True)
