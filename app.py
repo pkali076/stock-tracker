@@ -2,12 +2,16 @@ import os
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import requests
+import logging
 
 app = Flask(__name__)
 CORS(app)
 
 API_KEY = os.getenv('ALPHA_VANTAGE_API_KEY')
 BASE_URL = 'https://www.alphavintage.co/query'
+
+#set up logging
+logging.basicConfig(level=logging.INFO)
 
 def get_stock_data(symbol, interval='1min', outputsize='compact'):
     params = {
@@ -17,14 +21,17 @@ def get_stock_data(symbol, interval='1min', outputsize='compact'):
         'apikey': API_KEY,
         'outputsize': outputsize
     }
-
-    response = requests.get(BASE_URL, params=params)
-    data = response.json()
-    time_series_key = f'Time Series ({interval})'
-    if time_series_key in data:
-        return data[time_series_key]
-    else:
-        return {'error': 'Error fetching data'}
+    try:
+        response = requests.get(BASE_URL, params=params)
+        data = response.json()
+        time_series_key = f'Time Series ({interval})'
+        if time_series_key in data:
+            return data[time_series_key]
+        else:
+            return {'error': 'Error fetching data'}
+    except requests.exceptions.RequestException as e:
+        logging.error(f"Request Failed {e}")
+        return {'error': 'Request Failed'}
     
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -35,7 +42,7 @@ def index():
     else:
         return """
         <h1>Stock Price Tracker API</h1>
-        <p>Use a POST request to this endpoint with a JSON payload containing a stock symbol to get stock data.</p>
+        <p>Use POST Request to see more data. Placeholder until then.</p>
         """
 
 
