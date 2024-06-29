@@ -1,3 +1,4 @@
+import os
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import requests
@@ -5,7 +6,7 @@ import requests
 app = Flask(__name__)
 CORS(app)
 
-API_KEY = 'AlphaVintageAPIKey'
+API_KEY = os.getenv('ALPHA_VANTAGE_API_KEY')
 BASE_URL = 'https://www.alphavintage.co/query'
 
 def get_stock_data(symbol, interval='1min', outputsize='compact'):
@@ -30,7 +31,10 @@ def index():
     data = request.get_json()
     symbol = data['symbol'].upper()
     stock_data = get_stock_data(symbol)
-    return jsonify(stock_data)
+    return """
+        <h1>Stock Price Tracker API</h1>
+        <p>Use a POST request to this endpoint with a JSON payload containing a stock symbol to get stock data.</p>
+        """
 
 if __name__ == '__main__':
     app.run(debug=True)
