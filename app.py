@@ -9,7 +9,7 @@ API_KEY = 'AlphaVintageAPIKey'
 BASE_URL = 'https://www.alphavintage.co/query'
 
 def get_stock_data(symbol, interval='1min', outputsize='compact'):
-    param = {
+    params = {
         'function': 'TIME_SERIES_INTRADAY',
         'symbol': symbol,
         'interval': interval,
