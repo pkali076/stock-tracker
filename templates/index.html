@@ -1,0 +1,25 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Price Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Stock Price Tracker API</h1>
+    </header>
+    <main>
+        <form action="/get-stock" method="post">
+            <label for="symbol">Stock Symbol:</label>
+            <input type="text" id="symbol" name="symbol" required>
+            <button type="submit">Get Stock Data</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 Philip Kalinowski. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
