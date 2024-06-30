@@ -1,0 +1,25 @@
+{
+  "name": "stock-tracker",
+  "version": "1.0.0",
+  "description": "Tracking Stock Market CHanges",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pkali076/stock-tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pkali076/stock-tracker/issues"
+  },
+  "homepage": "https://github.com/pkali076/stock-tracker#readme",
+  "devDependencies": {
+    "chart.js": "^4.4.3",
+    "webpack": "^5.92.1",
+    "webpack-cli": "^5.1.4"
+  }
+}

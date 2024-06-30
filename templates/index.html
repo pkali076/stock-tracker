@@ -21,7 +21,14 @@
         {% endif %}
         {% if stock_data %}
         <h2>Stock Data for {{ symbol }}</h2>
-        <pre>{{ stock_data }}</pre>
+        <canvas id="stockChart"></canvas>
+        <script>
+            const labels = JSON.parse('{{ labels | tojson | safe }}');
+            const data = JSON.parse('{{ data | tojson | safe }}');
+            import('./static/js/bundle.js').then(module => {
+                module.createChart(labels, data);
+            });
+        </script>
         {% endif %}
     </main>
     <footer>
