@@ -160,17 +160,18 @@ section {
     }
 }
 
-/* Styles for the chart */
+
 canvas {
     background: #222;
     border-radius: 8px;
-    width: 90%; 
-    height: 700px; 
-    margin: 0 auto; 
+    width: 100%; 
+    height: 600px; 
+    margin: 0 auto;
 }
 
 .axis-label {
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: #fff;
 }
+
 
