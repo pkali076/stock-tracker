@@ -22,11 +22,13 @@
         {% if stock_data %}
         <h2>Stock Data for {{ symbol }}</h2>
         <canvas id="stockChart"></canvas>
-        <script>
+        <script type="module">
             const labels = JSON.parse('{{ labels | tojson | safe }}');
             const data = JSON.parse('{{ data | tojson | safe }}');
             import('./static/js/bundle.js').then(module => {
                 module.createChart(labels, data);
+            }).catch(error => {
+                console.error('Error importing module:', error);
             });
         </script>
         {% endif %}
