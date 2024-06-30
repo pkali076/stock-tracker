@@ -1,5 +1,5 @@
 // import { Chart } from "chart.js/auto";
-// import 'chartjs-adapter-date-fns';
+ import 'chartjs-adapter-date-fns';
 // import {enUs} from 'date-fns/locale'
 
 function createChart(labels, data) {
