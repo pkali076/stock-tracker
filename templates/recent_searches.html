@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recent Searches</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Recent Stock Searches</h1>
+    </header>
+    <main>
+        <ul>
+            {% for search in searches %}
+            <li>{{ search }}</li>
+            {% endfor %}
+        </ul>
+        <a href="/">Go back to Home</a>
+    </main>
+    <footer>
+        <p>&copy; 2024 Philip Kalinowski. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
