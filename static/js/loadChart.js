@@ -1,3 +1,6 @@
+//import webpackConfig from "../../webpack.config";
+import MyLibrary from webpackConfig
+
 document.addEventListener('DOMContentLoaded', (event) => {
     const labels = JSON.parse(document.getElementById('labelsData').textContent);
     const data = JSON.parse(document.getElementById('chartData').textContent);
