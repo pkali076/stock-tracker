@@ -2,5 +2,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const labels = JSON.parse(document.getElementById('labelsData').textContent);
     const data = JSON.parse(document.getElementById('chartData').textContent);
 
-    MyLibrary.createChart(labels, data);
+    // Make sure MyLibrary is accessible
+    if (typeof MyLibrary !== 'undefined' && MyLibrary.createChart) {
+        MyLibrary.createChart(labels, data);
+    } else {
+        console.error('MyLibrary or createChart is not defined');
+    }
 });
