@@ -34,7 +34,7 @@ def get_stock():
         labels = []
         data = []
         for time, price_info in stock_data.items():
-            labels.append(datetime.strptime(time, '%Y-%m-%d %H:%M:%S'))
+            labels.append(datetime.strptime(time, '%Y-%m-%d %H:%M:%S').strftime('%Y-%m-%d %H:%M:%S'))
             data.append(float(price_info['1. open']))  # using '1. open' as an example
         
         # Save to recent searches

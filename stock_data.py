@@ -1,4 +1,3 @@
-# stock_data.py
 import os
 import requests
 import logging

@@ -21,9 +21,15 @@
         {% endif %}
         {% if stock_data %}
         <h2>Stock Data for {{ symbol }}</h2>
-        <canvas id="stockChart"></canvas>
-        <script id="labelsData" type="application/json">{{ labels | tojson | safe }}</script>
-        <script id="chartData" type="application/json">{{ data | tojson | safe }}</script>
+        <pre>{{ stock_data | tojson(indent=2) }}</pre>
+        <script>
+            const labels = JSON.parse('{{ labels | tojson | safe }}');
+            const data = JSON.parse('{{ data | tojson | safe }}');
+            const stockData = JSON.parse('{{ stock_data | tojson | safe }}');
+            console.log('Stock Data:', stockData);
+            console.log('Labels:', labels);
+            console.log('Data:', data);
+        </script>
         {% endif %}
     </main>
     <footer>
