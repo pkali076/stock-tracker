@@ -24,7 +24,6 @@
         <canvas id="stockChart" width="400" height="200"></canvas>
         <script id="labelsData" type="application/json">{{ labels | tojson | safe }}</script>
         <script id="chartData" type="application/json">{{ data | tojson | safe }}</script>
-        <script src="{{ url_for('static', filename='js/chart.min.js') }}"></script>
         <script src="{{ url_for('static', filename='js/loadChart.js') }}"></script>
         {% endif %}
         <!-- {% if error %}
@@ -41,6 +40,7 @@
             console.log('Labels:', labels);
             console.log('Data:', data);
         </script>
+        <script src="{{ url_for('static', filename='js/loadChart.js') }}"></script>
         {% endif %} -->
     </main>
     <footer>
