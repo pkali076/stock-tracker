@@ -1,7 +1,7 @@
 import Chart from 'chart.js/auto';
 
 // Function to create the chart
-export function createChart(labels, data) {
+function createChart(labels, data) {
     const ctx = document.getElementById('stockChart').getContext('2d');
     new Chart(ctx, {
         type: 'line',
@@ -30,3 +30,7 @@ export function createChart(labels, data) {
         }
     });
 }
+
+window.MyLibrary = {
+    createChart: createChart
+};

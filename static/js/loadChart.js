@@ -1,5 +1,5 @@
 //import webpackConfig from "../../webpack.config";
-import MyLibrary from webpackConfig
+//import MyLibrary from webpackConfig
 
 document.addEventListener('DOMContentLoaded', (event) => {
     const labels = JSON.parse(document.getElementById('labelsData').textContent);
