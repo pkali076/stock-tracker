@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         ctx.stroke();
 
         // Draw axes
-        ctx.strokeStyle = '#000';
+        ctx.strokeStyle = '#fff';
         ctx.lineWidth = 1;
 
         // Y axis
@@ -50,23 +50,33 @@ document.addEventListener('DOMContentLoaded', (event) => {
         ctx.stroke();
 
         // Draw labels
-        ctx.fillStyle = '#000';
+        ctx.fillStyle = '#fff';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
 
         // X axis labels
-        for (let i = 0; i < labels.length; i++) {
+        for (let i = 0; i < labels.length; i += Math.floor(labels.length / 10)) {
             const x = padding + i * xScale;
             const y = height - padding + 10;
-            ctx.fillText(labels[i], x, y);
+            ctx.fillText(labels[i].split(' ')[1], x, y);
         }
 
         // Y axis labels
         for (let i = 0; i <= 5; i++) {
             const y = height - padding - i * (height - padding * 2) / 5;
             const text = (minData + i * range / 5).toFixed(2);
-            ctx.fillText(text, padding - 20, y);
+            ctx.fillText(text, padding - 30, y);
         }
+
+        // X-axis label
+        ctx.fillText("Time", width / 2, height - 10);
+
+        // Y-axis label (rotate and then draw)
+        ctx.save();
+        ctx.translate(10, height / 2);
+        ctx.rotate(-Math.PI / 2);
+        ctx.fillText("Price", 0, 0);
+        ctx.restore();
     }
 
     drawLineChart(ctx, labels, data);
