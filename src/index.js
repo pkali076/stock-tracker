@@ -2,7 +2,6 @@ import Chart from 'chart.js/auto';
 
 // Function to create the chart
 export function createChart(labels, data) {
-    console.log("createChart function called");
     const ctx = document.getElementById('stockChart').getContext('2d');
     new Chart(ctx, {
         type: 'line',
