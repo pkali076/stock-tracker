@@ -1,6 +1,6 @@
-import { Chart } from "chart.js/auto";
-import 'chartjs-adapter-date-fns';
-import {enUs} from 'date-fns/locale'
+// import { Chart } from "chart.js/auto";
+// import 'chartjs-adapter-date-fns';
+// import {enUs} from 'date-fns/locale'
 
 function createChart(labels, data) {
     const ctx = document.getElementById('stockChart').getContext('2d');
@@ -22,11 +22,6 @@ function createChart(labels, data) {
                     type: 'time',
                     time: {
                         unit: 'minute'
-                    },
-                    adapters:{
-                        date:{
-                            locale:enUs,
-                        }
                     }
                 },
                 y: {
