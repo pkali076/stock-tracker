@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     // Function to draw a simple line chart
     function drawLineChart(ctx, labels, data) {
-        const width = ctx.canvas.width;
-        const height = ctx.canvas.height;
+        const width = ctx.canvas.width = 1000; // Set canvas width
+        const height = ctx.canvas.height = 500; // Set canvas height
         const padding = 40;
 
         ctx.clearRect(0, 0, width, height);

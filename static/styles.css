@@ -164,9 +164,13 @@ section {
 canvas {
     background: #222;
     border-radius: 8px;
+    width: 90%; 
+    height: 400px; 
+    margin: 0 auto; 
 }
 
 .axis-label {
     font-size: 0.8rem;
     color: #fff;
 }
+
