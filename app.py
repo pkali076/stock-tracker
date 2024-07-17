@@ -53,7 +53,7 @@ def get_stock():
         logging.info(f"Data Daily: {data_daily}")
         logging.info(f"Labels Weekly: {labels_weekly}")
         logging.info(f"Data Weekly: {data_weekly}")
-        logging.info(f"Labels Monthly: {labels_monthly}")
+        logging.info(f"Labels monthly: {labels_monthly}")
         logging.info(f"Data Monthly: {data_monthly}")
 
 
@@ -80,8 +80,14 @@ def process_stock_data(data, interval):
     labels = []
     data_points = []
     for time, price_info in data.items():
-        labels.append(datetime.strptime(time, '%Y-%m-%d %H:%M:%S').strftime('%Y-%m-%d %H:%M:%S') if interval == '15min' else time)
-        data_points.append(float(price_info['1. open']))
+        try:
+            label = datetime.strptime(time, '%Y-%m-%d %H:%M:%S').strftime('%Y-%m-%d %H:%M:%S') if interval == '15min' else time
+            labels.append(label)
+            data_point = float(price_info.get('1. open', 0))  # Default to 0 if '1. open' is not found
+            data_points.append(data_point)
+        except (TypeError, ValueError) as e:
+            logging.error(f"Error processing data point {time}: {e}")
+            continue
     return labels, data_points
 
 

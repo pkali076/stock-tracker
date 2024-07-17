@@ -49,10 +49,7 @@
             <script id="monthlyData" type="application/json">{{ data_monthly | tojson | safe }}</script>
 
             <script src="{{ url_for('static', filename='js/loadChart.js') }}"></script>
-            <!-- <canvas id="stockChart"></canvas>
-            <script id="labelsData" type="application/json">{{ labels | tojson | safe }}</script>
-            <script id="chartData" type="application/json">{{ data | tojson | safe }}</script>
-            <script src="{{ url_for('static', filename='js/loadChart.js') }}"></script> -->
+
         </div>
         {% endif %}
     </main>

@@ -17,6 +17,12 @@ from index.html
         <script src="{{ url_for('static', filename='js/loadChart.js') }}"></script>
         {% endif %} -->
 
+
+                    <!-- <canvas id="stockChart"></canvas>
+            <script id="labelsData" type="application/json">{{ labels | tojson | safe }}</script>
+            <script id="chartData" type="application/json">{{ data | tojson | safe }}</script>
+            <script src="{{ url_for('static', filename='js/loadChart.js') }}"></script> -->
+
 from loadChart.js
      
 
