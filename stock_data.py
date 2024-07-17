@@ -10,8 +10,6 @@ def get_stock_data(symbol, interval='15min', outputsize='compact'):
 
     """
         fetches stock data for given symbol from Alpha Vantage API
-
-    
     Parameters:
         symbol: stock ticker symbol (e.g. NFLX for Netflix)
         interval: interval between data points (1min 5min, 15min, 30min, 60min)

@@ -1,0 +1,21 @@
+from index.html
+
+        <!-- {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+        {% if stock_data %}
+        <h2>Stock Data for {{ symbol }}</h2>
+        <pre>{{ stock_data | tojson(indent=2) }}</pre>
+        <script>
+            const labels = JSON.parse('{{ labels | tojson | safe }}');
+            const data = JSON.parse('{{ data | tojson | safe }}');
+            const stockData = JSON.parse('{{ stock_data | tojson | safe }}');
+            console.log('Stock Data:', stockData);
+            console.log('Labels:', labels);
+            console.log('Data:', data);
+        </script>
+        <script src="{{ url_for('static', filename='js/loadChart.js') }}"></script>
+        {% endif %} -->
+
+
+        
