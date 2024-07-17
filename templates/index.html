@@ -29,26 +29,26 @@
         <div class="chart-container">
             <h2>Stock Data for {{ symbol }}</h2>
             <h3>Intraday</h3>
-        <canvas id="intradayChart"></canvas>
-        <script id="intradayLabels" type="application/json">{{ labels_intraday | tojson | safe }}</script>
-        <script id="intradayData" type="application/json">{{ data_intraday | tojson | safe }}</script>
+            <canvas id="intradayChart"></canvas>
+            <script id="intradayLabels" type="application/json">{{ labels_intraday | tojson | safe }}</script>
+            <script id="intradayData" type="application/json">{{ data_intraday | tojson | safe }}</script>
 
-        <h3>Daily</h3>
-        <canvas id="dailyChart"></canvas>
-        <script id="dailyLabels" type="application/json">{{ labels_daily | tojson | safe }}</script>
-        <script id="dailyData" type="application/json">{{ data_daily | tojson | safe }}</script>
+            <h3>Daily</h3>
+            <canvas id="dailyChart"></canvas>
+            <script id="dailyLabels" type="application/json">{{ labels_daily | tojson | safe }}</script>
+            <script id="dailyData" type="application/json">{{ data_daily | tojson | safe }}</script>
 
-        <h3>Weekly</h3>
-        <canvas id="weeklyChart"></canvas>
-        <script id="weeklyLabels" type="application/json">{{ labels_weekly | tojson | safe }}</script>
-        <script id="weeklyData" type="application/json">{{ data_weekly | tojson | safe }}</script>
+            <h3>Weekly</h3>
+            <canvas id="weeklyChart"></canvas>
+            <script id="weeklyLabels" type="application/json">{{ labels_weekly | tojson | safe }}</script>
+            <script id="weeklyData" type="application/json">{{ data_weekly | tojson | safe }}</script>
 
-        <h3>Monthly</h3>
-        <canvas id="monthlyChart"></canvas>
-        <script id="monthlyLabels" type="application/json">{{ labels_monthly | tojson | safe }}</script>
-        <script id="monthlyData" type="application/json">{{ data_monthly | tojson | safe }}</script>
+            <h3>Monthly</h3>
+            <canvas id="monthlyChart"></canvas>
+            <script id="monthlyLabels" type="application/json">{{ labels_monthly | tojson | safe }}</script>
+            <script id="monthlyData" type="application/json">{{ data_monthly | tojson | safe }}</script>
 
-        <script src="{{ url_for('static', filename='js/loadChart.js') }}"></script>
+            <script src="{{ url_for('static', filename='js/loadChart.js') }}"></script>
             <!-- <canvas id="stockChart"></canvas>
             <script id="labelsData" type="application/json">{{ labels | tojson | safe }}</script>
             <script id="chartData" type="application/json">{{ data | tojson | safe }}</script>

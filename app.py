@@ -47,6 +47,15 @@ def get_stock():
         labels_weekly, data_weekly = process_stock_data(weekly_data, 'Weekly')
         labels_monthly, data_monthly = process_stock_data(monthly_data, 'Monthly')
 
+        logging.info(f"Labels Intraday: {labels_intraday}")
+        logging.info(f"Data Intraday: {data_intraday}")
+        logging.info(f"Labels Daily: {labels_daily}")
+        logging.info(f"Data Daily: {data_daily}")
+        logging.info(f"Labels Weekly: {labels_weekly}")
+        logging.info(f"Data Weekly: {data_weekly}")
+        logging.info(f"Labels Monthly: {labels_monthly}")
+        logging.info(f"Data Monthly: {data_monthly}")
+
 
         # labels = [] #initialize array for labels on chart
         # data = [] #initialize array for the data on chart
