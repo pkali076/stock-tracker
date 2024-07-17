@@ -41,3 +41,63 @@ def get_stock_data(symbol, interval='15min', outputsize='compact'):
     except requests.exceptions.RequestException as e: #log errors if any occurred upon request failure, plus the reason
         logging.error(f"Request failed: {e}")
         return {'error': 'Request failed'}
+    
+def get_daily_stock_data(symbol):
+    params = {
+        'function': 'TIME_SERIES_DAILY',
+        'symbol': symbol,
+        'apikey': API_KEY
+    }
+
+    try:
+        response = requests.get(BASE_URL, params=params)
+        response.raise_for_status()
+        data = response.json()
+        logging.info(data)
+        if 'Time Series (Daily)' in data:
+            return data['Time Series (Daily)']
+        else:
+            return {'error': 'Error fetching data'}
+    except requests.exceptions.RequestException as e:
+        logging.error(f"Request failed: {e}")
+        return {'error': 'Request failed'}
+    
+def get_weekly_stock_data(symbol):
+    params = {
+        'function': 'TIME_SERIES_WEEKLY',
+        'symbol': symbol,
+        'apikey': API_KEY
+    }
+
+    try:
+        response = requests.get(BASE_URL, params=params)
+        response.raise_for_status()
+        data = response.json()
+        logging.info(data)
+        if 'Weekly Time Series' in data:
+            return data['Weekly Time Series']
+        else:
+            return {'error': 'Error fetching data'}
+    except requests.exception.RequestException as e:
+        logging.error(f"Request failed: {e}")
+        return {'error': 'Request failed'}
+    
+def get_monthly_stock_data(symbol):
+    params = {
+        'function': 'TIME_SERIES_MONTHLY',
+        'symbol': symbol,
+        'apikey': API_KEY
+    }
+
+    try:
+        response = requests.get(BASE_URL, params=params)
+        response.raise_for_status()
+        data = response.json()
+        logging.info(data)
+        if 'Monthly Time Series' in data:
+            return data['Monthly Time Series']
+        else:
+            return {'error': 'Error fetching data'}
+    except requests.exceptions.RequestException as e:
+        logging.error(f"Request failed: {e}")
+        return {'error': 'Request failed'}

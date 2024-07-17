@@ -6,7 +6,6 @@
 
 ## Additional Ideas In Progress
 - Login through Database for Favorites / Followed Stocks
-- Recently Viewed
 - Different types of graphs
 - Edit graphs layout (possibly through Matplotlib -- Python library)
 
