@@ -32,7 +32,7 @@ def get_stock_data(symbol, interval='15min', outputsize='compact'):
         response = requests.get(BASE_URL, params=params) #make API request through get method; URL request for new params object
         response.raise_for_status() #raise an HTTPError if request was unsuccessful
         data = response.json() #parse JSON response from Get Request
-        logging.log(data) #read parsed data information (for testing purposes only)
+        #logging.log(data) #read parsed data information (for testing purposes only)
         time_series_key = f'Time Series ({interval})' #key has access to time series data
         if time_series_key in data: #check if key exists in response data
             return data[time_series_key]

@@ -48,13 +48,13 @@ def get_stock():
         labels_monthly, data_monthly = process_stock_data(monthly_data, 'Monthly')
 
 
-        labels = [] #initialize array for labels on chart
-        data = [] #initialize array for the data on chart
-        for time, price_info in stock_data.items():
-            #convert time string to a datetime object and format it
-            labels.append(datetime.strptime(time, '%Y-%m-%d %H:%M:%S').strftime('%Y-%m-%d %H:%M:%S'))
-            #extract the open price and covert to a float
-            data.append(float(price_info['1. open']))
+        # labels = [] #initialize array for labels on chart
+        # data = [] #initialize array for the data on chart
+        # for time, price_info in stock_data.items():
+        #     #convert time string to a datetime object and format it
+        #     labels.append(datetime.strptime(time, '%Y-%m-%d %H:%M:%S').strftime('%Y-%m-%d %H:%M:%S'))
+        #     #extract the open price and covert to a float
+        #     data.append(float(price_info['1. open']))
         
         # Save search symbol to recent searches for recent_searches.html template
         recent_searches.append(symbol)
