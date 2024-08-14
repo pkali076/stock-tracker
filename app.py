@@ -82,7 +82,7 @@ def process_stock_data(data, interval):
     for time, price_info in data.items():
         try:
             if interval == '15min':
-                label = datetime.strptime(time, '%Y-%m-%d %H:%M:%S').strftime('%Y-%m-%d %H:%M:%S')
+                label = datetime.strptime(time,"%Y-%m-%d %H:%M:%S").strftime("%Y-%m-%d %H:%M:%S")
             else:
                 label = time
             labels.append(label)
