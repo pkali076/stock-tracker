@@ -88,10 +88,12 @@ img, video {
 
 /* Chart container */
 .chart-container {
-    width: 100%; /* Full width */
-    height: auto;
+    width: 800px; /* Full width */
+    margin: 0 auto;
     padding: 1rem;
 }
+    /*height: auto;*/
+
 
 canvas {
     background: #222;

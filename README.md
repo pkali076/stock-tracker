@@ -6,8 +6,10 @@
 
 ## Additional Ideas In Progress
 - Login through Database for Favorites / Followed Stocks
-- Different types of graphs
-- Edit graphs layout (possibly through Matplotlib -- Python library)
+- Edit Recent-Searches once Database is set up
+- Edit graphs layout (Matplotlib -- Python library)
+- Figure something out for organizing recently reviews stocks.. (comprehensive data or merely a list ??)
+    - Main page already works as a comprehensive graph version.. Perhaps the Recents have links to specific Daily, Weekly, Monthly
 
 ### Reasons for this
 - To develop something I find useful and more adapative to the real world

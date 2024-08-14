@@ -15,10 +15,8 @@ def get_stock_data(symbol, interval='15min', outputsize='compact'):
         interval: interval between data points (1min 5min, 15min, 30min, 60min)
         outputsize: amount of data to return ('compact', 'full'), compact returns latest 100 data points
                     in the intraday time series; full returns trailing 30 days of the most recent intraday data
-
-    See more: https://www.alphavantage.co/documentation/
-    Returns:
-        dictionary: containing stock data 
+    Documentation: https://www.alphavantage.co/documentation/
+        Returns a dictinary containing the stock data
     """
     params = {
         'function': 'TIME_SERIES_INTRADAY',

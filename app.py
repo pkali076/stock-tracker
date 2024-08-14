@@ -81,10 +81,22 @@ def process_stock_data(data, interval):
     data_points = []
     for time, price_info in data.items():
         try:
-            label = datetime.strptime(time, '%Y-%m-%d %H:%M:%S').strftime('%Y-%m-%d %H:%M:%S') if interval == '15min' else time
+            if interval == '15min':
+                label = datetime.strptime(time, '%Y-%m-%d %H:%M:%S').strftime('%Y-%m-%d %H:%M:%S')
+            else:
+                label = time
             labels.append(label)
-            data_point = float(price_info.get('1. open', 0))  # Default to 0 if '1. open' is not found
+
+            data_point = float(price_info.get('1. open', 0))
             data_points.append(data_point)
+
+        # try:
+        #     label = datetime.strptime(time, '%Y-%m-%d %H:%M:%S').strftime('%Y-%m-%d %H:%M:%S') if interval == '15min' else time
+        #     labels.append(label)
+        #     data_point = float(price_info.get('1. open', 0))  # Default to 0 if '1. open' is not found
+        #     data_points.append(data_point)
+
+
         except (TypeError, ValueError) as e:
             logging.error(f"Error processing data point {time}: {e}")
             continue
